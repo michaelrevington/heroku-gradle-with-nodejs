@@ -128,17 +128,17 @@ function install_node() {
 	echo "NodeJS ${NODE_VERSION} found."
 	
 	echo "Downloading NodeJS..."
-	eval curl "${NODE_SERVER}${NODE_FILE}" --output "/app/${NODE_FILE}"
+	eval curl "${NODE_SERVER}${NODE_FILE}" --output "/${1}/${NODE_FILE}"
   echo "Download complete."
 
   echo "${1}"
   echo "${PWD}"
-  which gradle
+  ls
   echo "Unzipping tarball..."
-  eval gzip -d "/app/${NODE_FILE}"
+  eval gzip -d "/${1}/${NODE_FILE}"
   echo "Unzip finished."
   
-  export PATH="/app/${NODE_FILE}/bin:$PATH"  
-  "$(chmod +x /app/${NODE_FILE}/bin/npm)"
+  export PATH="/${1}/${NODE_FILE}/bin:$PATH"  
+  "$(chmod +x /${1}/${NODE_FILE}/bin/npm)"
 	
 }

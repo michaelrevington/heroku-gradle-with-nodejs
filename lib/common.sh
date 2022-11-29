@@ -130,7 +130,7 @@ function install_node() {
 	echo "Downloading NodeJS..."
   which wget
   ls
-	if ["$(curl ${NODE_SERVER}${NODE_FILE} --output ${NODE_FILE})"]; then 
+	if ["$(wget ${NODE_SERVER}${NODE_FILE})"]; then 
     echo "Download complete."
 	
     echo "Unzipping tarball..."

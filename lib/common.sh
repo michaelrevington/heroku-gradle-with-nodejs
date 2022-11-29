@@ -130,12 +130,11 @@ function install_node() {
 	echo "Downloading NodeJS..."
 	eval curl "${NODE_SERVER}${NODE_FILE}" --output "${1}/${NODE_FILE}"
   echo "Download complete." 
-
-  ls | grep node
+ 
   echo "Unzipping tarball..."
   eval gzip -d "/${1}/${NODE_FILE}"
-  echo "Unzip finished."
-  ls | grep node
+  echo "Unzip finished." 
+  NODE_FILE=${NODE_FILE:-3}
   
   export PATH="${1}/${NODE_FILE}/bin:$PATH"  
   "$(chmod +x ${1}/${NODE_FILE}/bin/npm)"

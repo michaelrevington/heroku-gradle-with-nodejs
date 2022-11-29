@@ -110,7 +110,7 @@ function install_node() {
 		NODE_VERSION="v${NODE_VERSION}"
 		echo "NodeJS ${NODE_VERSION}"
 	else
-		NODE_VERSION="latest"
+		NODE_VERSION="v18.12.1"
 		echo "NodeJS latest is used."
 	fi 
 	
@@ -135,6 +135,6 @@ function install_node() {
 	gzip -d {NODE_FILE}
 	echo "Unzip finished."
 	
-	export PATH="${PWD}/${NODE_FILE}/bin:$PATH"
-  chmod +x npm
+	export PATH="${PWD}/${NODE_FILE}/bin:$PATH" 
+	"$(chmod +x ${PWD}/${NODE_FILE}/bin/npm)"
 }

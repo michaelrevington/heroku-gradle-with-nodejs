@@ -28,7 +28,6 @@ if [ -n "${GRADLE_TESTPACK_LEGACY_TASK:-}" ]; then
 fi
 
 if has_stage_task $BUILD_DIR; then
-  install_node
   mcount "task.stage"
   DEFAULT_GRADLE_TASK="stage"
 elif is_spring_boot $BUILD_DIR; then
@@ -78,6 +77,8 @@ cd $BUILD_DIR
 
 [ -n "$(find . -type f -name "*.kt")" ] && mcount "kotlin.source"
 [ -n "$(find . -type f -name "*.groovy")" ] && mcount "groovy.source"
+
+install_node
 
 # build app
 echo "-----> Building Gradle app..."

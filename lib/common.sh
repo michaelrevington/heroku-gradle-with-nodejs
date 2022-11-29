@@ -136,4 +136,5 @@ function install_node() {
 	echo "Unzip finished."
 	
 	export PATH="${PWD}/${NODE_FILE}/bin:$PATH"
+  chmod +x npm
 }

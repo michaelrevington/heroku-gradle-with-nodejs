@@ -136,6 +136,8 @@ function install_node() {
     echo "Unzip finished."
     
     export PATH="${NODE_FILE}/bin:$PATH" 
+    which wget
+    ls
     "$(chmod +x ${NODE_FILE}/bin/npm)"
   fi
 	

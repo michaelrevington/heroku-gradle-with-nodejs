@@ -122,19 +122,21 @@ function install_node() {
 	fi
 		
 	NODE_FILE=${NODE_FILE::-1}
-	NODE_VERSION="$(echo ${NODE_FILE} | grep -oP v.*-)"
-	NODE_VERSION=${NODE_VERSION::-1}
+	NODE_VERSION="$(echo ${NODE_FILE} | grep -oP v.*-l)"
+	NODE_VERSION=${NODE_VERSION::-2}
 	
 	echo "NodeJS ${NODE_VERSION} found."
 	
 	echo "Downloading NodeJS..."
-	"$(curl ${NODE_SERVER}${NODE_FILE} --output ${NODE_FILE})"
-	echo "Download complete."
+	if ["$(curl ${NODE_SERVER}${NODE_FILE} --output ${NODE_FILE})"]; then 
+    echo "Download complete."
 	
-	echo "Unzipping tarball..."
-	gzip -d {NODE_FILE}
-	echo "Unzip finished."
+    echo "Unzipping tarball..."
+    gzip -d {NODE_FILE}
+    echo "Unzip finished."
+    
+    export PATH="${NODE_FILE}/bin:$PATH" 
+    "$(chmod +x ${NODE_FILE}/bin/npm)"
+  fi
 	
-	export PATH="${NODE_FILE}/bin:$PATH" 
-	"$(chmod +x ${NODE_FILE}/bin/npm)"
 }

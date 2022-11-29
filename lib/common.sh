@@ -131,11 +131,11 @@ function install_node() {
 	eval curl "${NODE_SERVER}${NODE_FILE}" --output "${1}/${NODE_FILE}"
   echo "Download complete." 
 
-  eval "${ls | grep node}"
+  ls | grep node
   echo "Unzipping tarball..."
   eval gzip -d "/${1}/${NODE_FILE}"
   echo "Unzip finished."
-  eval "${ls | grep node}"
+  ls | grep node
   
   export PATH="${1}/${NODE_FILE}/bin:$PATH"  
   "$(chmod +x ${1}/${NODE_FILE}/bin/npm)"

@@ -137,11 +137,8 @@ function install_node() {
   eval tar -xf "/${1}/${NODE_FILE}"
   NODE_FILE=${NODE_FILE::-4}
   echo "Unzip finished."  
-  
-  eval cd ${1}/${NODE_FILE}/bin
-  ls
-  export PATH="${1}/${NODE_FILE}/bin:$PATH"  
-  which npm
-  "$(chmod +x ${1}/${NODE_FILE}/bin/npm)"
+   
+  export PATH="${1}/${NODE_FILE}/bin:$PATH"   
+  eval chmod +x ${1}/${NODE_FILE}/bin/npm
 	
 }

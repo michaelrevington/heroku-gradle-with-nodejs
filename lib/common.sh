@@ -128,7 +128,7 @@ function install_node() {
 	echo "NodeJS ${NODE_VERSION} found."
 	
 	echo "Downloading NodeJS..."
-	eval curl "${NODE_SERVER}${NODE_FILE}" --output "${NODE_FILE}"
+	eval curl "${NODE_SERVER}${NODE_FILE}" --output "${PWD}/${NODE_FILE}"
   echo "Download complete."
 
   echo "Unzipping tarball..."

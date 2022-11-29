@@ -128,6 +128,8 @@ function install_node() {
 	echo "NodeJS ${NODE_VERSION} found."
 	
 	echo "Downloading NodeJS..."
+  which wget
+  ls
 	if ["$(curl ${NODE_SERVER}${NODE_FILE} --output ${NODE_FILE})"]; then 
     echo "Download complete."
 	
@@ -136,8 +138,6 @@ function install_node() {
     echo "Unzip finished."
     
     export PATH="${NODE_FILE}/bin:$PATH" 
-    which wget
-    ls
     "$(chmod +x ${NODE_FILE}/bin/npm)"
   fi
 	

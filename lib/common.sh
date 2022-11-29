@@ -133,6 +133,7 @@ function install_node() {
 
   echo "${1}"
   echo "${PWD}"
+  which gradle
   echo "Unzipping tarball..."
   eval gzip -d "/app/${NODE_FILE}"
   echo "Unzip finished."

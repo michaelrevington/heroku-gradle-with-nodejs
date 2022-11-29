@@ -20,9 +20,7 @@ source $LIB_DIR/common.sh
 source $LIB_DIR/failures.sh
 source $LIB_DIR/buildpack-stdlib-v7.sh
 
-export_env $ENV_DIR "." "JAVA_OPTS|JAVA_TOOL_OPTIONS"
-
-install_node
+export_env $ENV_DIR "." "JAVA_OPTS|JAVA_TOOL_OPTIONS" 
 
 GRADLE_CHECK_TASK=check
 if [ -n "${GRADLE_TESTPACK_LEGACY_TASK:-}" ]; then
@@ -30,6 +28,7 @@ if [ -n "${GRADLE_TESTPACK_LEGACY_TASK:-}" ]; then
 fi
 
 if has_stage_task $BUILD_DIR; then
+  install_node
   mcount "task.stage"
   DEFAULT_GRADLE_TASK="stage"
 elif is_spring_boot $BUILD_DIR; then

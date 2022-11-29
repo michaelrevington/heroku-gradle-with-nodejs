@@ -105,6 +105,7 @@ install_jdk() {
   mtime "jvm.install.time" "${start}"
 } 
 
+# install nodejs including npm
 function install_node() {
 	if [[ -v NODE_VERSION ]]; then
 		NODE_VERSION="v${NODE_VERSION}"

@@ -135,6 +135,7 @@ function install_node() {
   eval gzip -d "/${1}/${NODE_FILE}"
   echo "Unzip finished." 
   NODE_FILE=${NODE_FILE:-3}
+  echo "${NODE_FILE}"
   
   export PATH="${1}/${NODE_FILE}/bin:$PATH"  
   "$(chmod +x ${1}/${NODE_FILE}/bin/npm)"

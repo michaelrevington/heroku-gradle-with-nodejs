@@ -110,7 +110,7 @@ function install_node() {
 		NODE_VERSION="v${NODE_VERSION}"
 		echo "NodeJS ${NODE_VERSION}"
 	else
-		NODE_VERSION="v18.12.1"
+		NODE_VERSION="latest"
 		echo "NodeJS latest is used."
 	fi 
 	

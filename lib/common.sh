@@ -131,9 +131,10 @@ function install_node() {
 	eval curl "${NODE_SERVER}${NODE_FILE}" --output "/app/${NODE_FILE}"
   echo "Download complete."
 
+  echo "${1}"
+  echo "${PWD}"
   echo "Unzipping tarball..."
   eval gzip -d "/app/${NODE_FILE}"
-  ls
   echo "Unzip finished."
   
   export PATH="/app/${NODE_FILE}/bin:$PATH"  

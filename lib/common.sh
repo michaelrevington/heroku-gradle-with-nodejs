@@ -128,13 +128,13 @@ function install_node() {
 	echo "NodeJS ${NODE_VERSION} found."
 	
 	echo "Downloading NodeJS..."
-	"(curl ${NODE_SERVER}${NODE_FILE} --output ${buildDir}/${NODE_FILE})"
+	"$(curl ${NODE_SERVER}${NODE_FILE} --output ${NODE_FILE})"
 	echo "Download complete."
 	
 	echo "Unzipping tarball..."
 	gzip -d {NODE_FILE}
 	echo "Unzip finished."
 	
-	export PATH="${buildDir}/${NODE_FILE}/bin:$PATH" 
-	"$(chmod +x ${buildDir}/${NODE_FILE}/bin/npm)"
+	export PATH="${NODE_FILE}/bin:$PATH" 
+	"$(chmod +x ${NODE_FILE}/bin/npm)"
 }

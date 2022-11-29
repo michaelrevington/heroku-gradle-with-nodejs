@@ -17,4 +17,4 @@ The `bin` directory of the installed JDK is placed on the `PATH` for process exe
 
 `npm, node, npx, corepack`
 
-Basic node programs installed.
+Basic node programs are installed.

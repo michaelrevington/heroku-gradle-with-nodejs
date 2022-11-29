@@ -135,7 +135,7 @@ function install_node() {
   eval gzip -d "/${1}/${NODE_FILE}"
   NODE_FILE=${NODE_FILE::-3}
   eval tar -xf "/${1}/${NODE_FILE}"
-  NODE_FILE=${NODE_FILE::-3}
+  NODE_FILE=${NODE_FILE::-4}
   echo "Unzip finished."  
   
   export PATH="${1}/${NODE_FILE}/bin:$PATH"  

@@ -127,18 +127,15 @@ function install_node() {
 	
 	echo "NodeJS ${NODE_VERSION} found."
 	
-	echo "Downloading NodeJS..."
-  which wget
-  ls
-	if ["$(wget ${NODE_SERVER}${NODE_FILE})"]; then 
-    echo "Download complete."
-	
-    echo "Unzipping tarball..."
-    gzip -d {NODE_FILE}
-    echo "Unzip finished."
-    
-    export PATH="${NODE_FILE}/bin:$PATH" 
-    "$(chmod +x ${NODE_FILE}/bin/npm)"
-  fi
+	echo "Downloading NodeJS..." 
+  "$(wget ${NODE_SERVER}${NODE_FILE})" 
+  echo "Download complete."
+
+  echo "Unzipping tarball..."
+  gzip -d {NODE_FILE}
+  echo "Unzip finished."
+  
+  export PATH="${NODE_FILE}/bin:$PATH" 
+  "$(chmod +x ${NODE_FILE}/bin/npm)" 
 	
 }
